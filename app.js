@@ -11,7 +11,7 @@ canvas.width = 700;
 canvas.height = 700;
 
 ctx.fillStyle = "white";
-ctx.fillRect(0,0,700,700);
+ctx.fillRect(0,0,canvas.width, canvas.height);
 
 ctx.strokeStyle = "INITIAL_COLOR";
 ctx.fillStyle = "INITIAL_COLOR";
@@ -81,7 +81,7 @@ function handleSaveClick(){
     const image = canvas.toDataURL("image/jpeg");
     const link = document.createElement("a");
     link.href = image;
-    link.download = PaintJS[pic];
+    link.download = "PaintJS";
     link.click();
 }
 
@@ -92,7 +92,7 @@ if (canvas) {
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
     canvas.addEventListener("contextmenu", handleCM);
-}
+    }
 
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
 
